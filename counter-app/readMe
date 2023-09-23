@@ -1,0 +1,28 @@
+# Counter App
+
+This is a simple counter app built with JavaScript, HTML,CSS and BOOTSTRAP FRAMEWORK.
+
+## Features
+
+- Increment to increase the counter value.
+- A reset button to set the counter value back to zero.
+
+## File Structure
+.
+├── bootstrap
+└── src
+    ├── css
+    │   └── style.css
+    ├── html
+    │   └── index.html
+    └── js
+        └── index.js
+
+## Getting Started
+
+1. Clone this repository: `git clone https://github.com/your-username/counter-app.git`
+2. Open `index.html` in your web browser.
+3. Start counting!
+
+
+Thanks for watching! 😊
