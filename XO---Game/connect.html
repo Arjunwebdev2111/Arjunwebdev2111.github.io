@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .box {
+        min-width: 40px;
+        min-height: 40px;
+        background-color: #161616;
+        border: 2px solid rgb(241, 237, 237);
+        border-radius: 50%;
+      }
+      .board {
+        display: grid;
+        padding: 10px 10px 10px ;
+        grid-template-rows: 100px 100px 100px ;
+        grid-template-columns: 100px 100px 100px ;
+        background-color: #a56eed;
+        row-gap: 10px;
+        column-gap: 10px;
+        border: 1px solid black;
+        border-radius: 10%;
+      }
+      .reset-btn {
+        border: 1px solid #f1ebeb;
+        font-size: larger;
+        font-weight: bolder;
+        color: white;
+        width: 100px;
+        height: 50px;
+        margin-left: 85%;
+        margin-top: 2%;
+        border-radius: 10%;
+        position: absolute;
+      }
+      @media only screen and (max-width: 768px) {
+        .board {
+          grid-template-rows: 50px 50px 50px ;
+          grid-template-columns: 50px 50px 50px ;
+        }
+        .reset-btn {
+          width: 50px;
+          height: 30px;
+          font-size: smaller;
+        }
+      }
+      .playerbox {
+        height: 50px;
+        border: 2px solid rgb(247, 246, 246);
+        background-color: #6b479b;
+        color: white;
+        font-size: x-large;
+      }
+      .container {
+        display: grid;
+        margin-top: 0%;
+        row-gap: 20px;
+      }
+      .txt-center {
+        padding-top: 0.75%;
+        text-align: center;
+        -webkit-text-stroke-width: 1px;
+        -webkit-text-stroke-color: rgb(244, 236, 236);
+      }
+      .justify-center {
+        justify-content: center;
+      }
+      .bg-blue {
+        background-color: #3bfa5e;
+      }
+      .navbar {
+        height: 80px;
+        border: 2px solid black;
+      }
+      .txt-font {
+        font-size: larger;
+        font-weight: bolder;
+        font-family: cursive, Arial, Helvetica, sans-serif;
+        color: #fffefe;
+      }
+      body {
+        padding: 0%;
+        margin: 0%;
+        background-color: rgba(155, 55, 55, 0.782);
+      }
+    </style>
+    <script src="./connect.js"></script>
+  </head>
+  <body onload="reset()">
+    <nav class="bg-blue navbar txt-font">
+      <h1 class="txt-center">Connect Game -XO</h1>
+    </nav>
+    <br />
+    <button id="reset" class="reset-btn" onclick="reset()">RESET</button>
+    
+    <div class="container justify-center">
+      <div class="playerbox txt-font txt-center">
+        <p id="player">Player 1 Turn</p>
+      </div>
+      <br />
+      <div class="board justify-center">
+        <div id="box1" class="box" onclick="connectGame('box1')"></div>
+        <div id="box2" class="box" onclick="connectGame('box2')"></div>
+        <div id="box3" class="box" onclick="connectGame('box3')"></div>
+        
+        <div id="box4" class="box" onclick="connectGame('box4')"></div>
+        <div id="box5" class="box" onclick="connectGame('box5')"></div>
+        <div id="box6" class="box" onclick="connectGame('box6')"></div>
+
+        <div id="box7" class="box" onclick="connectGame('box7')"></div>
+        <div id="box8" class="box" onclick="connectGame('box8')"></div>
+        <div id="box9" class="box" onclick="connectGame('box9')"></div>
+      </div>
+    </div>
+    <audio id="game-theme" controls autoplay loop hidden>
+      <source
+        src="./sounds/688049__dmytro_volovnenko__walk-around.wav"
+        type="audio/wav"
+      />
+    </audio>
+    <audio id="btn-touch" controls hidden>
+      <source
+        src="./sounds/661061__strangehorizon__steel_carabiner_1.wav"
+        type="audio/wav"
+      />
+    </audio>
+    <audio id="win" controls hidden>
+      <source
+        src="./sounds/337049__shinephoenixstormcrow__320655__rhodesmas__level-up-01.mp3"
+        type="audio/mp3"
+      />
+    </audio>
+    <audio id="draw" controls hidden>
+      <source
+        src="./sounds/335354__littlerainyseasons__magic.mp3"
+        type="audio/mp3"
+      />
+    </audio>
+  </body>
+</html>
